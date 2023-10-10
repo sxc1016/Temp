@@ -65,9 +65,8 @@ int main(void)
 			{
 				sum_2 = sum_2 + (float)data_1[i]/4096*3.3;
 			}
-			data = (sum_1 - sum_2) / ((float)data_1[59]/4096*3.3 - (float)data_1[119]/4096*3.3);
-			printf("\r\n%f",data);
-//			printf("\r\n%f,%f,%f,%f,%f",data,sum_1,sum_2,sum_1-sum_2,(float)data_1[39]/4096*3.3 - (float)data_1[19]/4096*3.3);
+			data = (sum_1 - sum_2) / ((float)data_1[119]/4096*3.3 - (float)data_1[59]/4096*3.3);
+			printf("\r\n%f,%f,%f,%f,%f",data,sum_1,sum_2,sum_1-sum_2,(float)data_1[119]/4096*3.3 - (float)data_1[59]/4096*3.3);
 			delay_ms(500);
 			sum_1 = 0;
 			sum_2 = 0;
