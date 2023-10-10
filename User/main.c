@@ -28,8 +28,8 @@ int main(void)
 	
 	uint16_t i;
 	uint16_t data_1[300] = {0};
-// 	float sum_1 = 0;
-//	float sum_2 = 0;
+ 	float sum_1 = 0;
+	float sum_2 = 0;
 	float data = 0;
 	// ÅäÖÃ´®¿Ú
 	USART_Config();
@@ -41,7 +41,7 @@ int main(void)
 	while (1)
 	{			
 			LED_CH1_ON;
-			delay_ms(15);
+			delay_ms(20);
 			LED_CH1_OFF;
 
 			for(i=0; i<300; i++)
@@ -49,39 +49,41 @@ int main(void)
 				data_1[i] = ADC_ConvertedValue[0];
 				delay_us(100);
 			}
-			for(i=0; i<300; i++)
-			{
-				printf("\r\n %f",(float)data_1[i]/4096*3.3);
-				delay_ms(1);
-			}
-			while(1);
+//			for(i=0; i<300; i++)
+//			{
+//				printf("\r\n %f",(float)data_1[i]/4096*3.3);
+//				delay_ms(1);
+//			}
+//			printf("%f,%f,%f",(float)data_1[119]/4096*3.3-(float)data_1[59]/4096*3.3,(float)data_1[139]/4096*3.3-(float)data_1[69]/4096*3.3,(float)data_1[159]/4096*3.3-(float)data_1[79]/4096*3.3);
+//			while(1);
 		
-//			for(i=0; i<20; i++)
-//			{
-//				sum_1 = sum_1 + ( (float)data_1[i]/4096*3.3 );
-//			}
-//			for(i=0; i<40; i++)
-//			{
-//				sum_2 = sum_2 + ( (float)data_1[i]/4096*3.3 );
-//			}
-//			data = (sum_1 - sum_2) / (data_1[40] - data_1[20]);
-//			printf("\r\n CH0 value = %f V \r\n",data);
-//			
-//			sum_1 = 0;
-//			sum_2 = 0;
-//			data = 0;
+			for(i=0; i<60; i++)
+			{
+				sum_1 = sum_1 + (float)data_1[i]/4096*3.3;
+			}
+			for(i=0; i<120; i++)
+			{
+				sum_2 = sum_2 + (float)data_1[i]/4096*3.3;
+			}
+			data = (sum_1 - sum_2) / ((float)data_1[59]/4096*3.3 - (float)data_1[119]/4096*3.3);
+			printf("\r\n%f",data);
+//			printf("\r\n%f,%f,%f,%f,%f",data,sum_1,sum_2,sum_1-sum_2,(float)data_1[39]/4096*3.3 - (float)data_1[19]/4096*3.3);
+			delay_ms(500);
+			sum_1 = 0;
+			sum_2 = 0;
+			data = 0;
 //			ADC_ConvertedValueLocal[0] =(float) ADC_ConvertedValue[0]/4096*3.3;
 //	
 //			printf("\r\n CH0 value = %f V \r\n",ADC_ConvertedValueLocal[0]);
 
-			data = get_data();
-			data = data + get_data();
-			data = data + get_data();
-			data = data + get_data();
-			data = data + get_data();
-			data = data + get_data();
-			printf("\r\n%f",data/6);
-			delay_ms(200);
+//			data = get_data();
+//			data = data + get_data();
+//			data = data + get_data();
+//			data = data + get_data();
+//			data = data + get_data();
+//			data = data + get_data();
+//			printf("\r\n%f",data/6);
+//			delay_ms(200);
 
 	 
 	}
