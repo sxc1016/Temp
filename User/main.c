@@ -27,10 +27,10 @@ int main(void)
 {		
 	
 	uint16_t i;
-	uint16_t data_1[300] = {0};
- 	float sum_1 = 0;
-	float sum_2 = 0;
-	float sum_3 = 0;
+//	uint16_t data_1[300] = {0};
+// 	float sum_1 = 0;
+//	float sum_2 = 0;
+//	float sum_3 = 0;
 	float data = 0;
 	// ÅäÖÃ´®¿Ú
 	USART_Config();
@@ -45,11 +45,11 @@ int main(void)
 			delay_ms(20);
 			LED_CH1_OFF;
 
-			for(i=0; i<300; i++)
-			{
-				data_1[i] = ADC_ConvertedValue[0];
-				delay_us(100);
-			}
+//			for(i=0; i<300; i++)
+//			{
+//				data_1[i] = ADC_ConvertedValue[0];
+//				delay_us(100);
+//			}
 //			for(i=0; i<300; i++)
 //			{
 //				printf("\r\n %f",(float)data_1[i]/4096*3.3);
@@ -57,10 +57,10 @@ int main(void)
 //			}
 //			while(1);
 		
-			for(i=2; i<220; i++)
-			{
-				sum_1 = sum_1 + (float)data_1[i]/4096*3.3;
-			}
+//			for(i=3; i<230; i++)
+//			{
+//				sum_1 = sum_1 + (float)data_1[i]/4096*3.3;
+//			}
 //			for(i=20; i<40; i++)
 //			{
 //				sum_2 = sum_2 + (float)data_1[i]/4096*3.3;
@@ -69,30 +69,27 @@ int main(void)
 //			{
 //				sum_3 = sum_3 + (float)data_1[i]/4096*3.3;
 //			}
-			data = sum_1 / ((float)data_1[2]/4096*3.3-(float)data_1[219]/4096*3.3);
-			printf("\r\n%f",data);
-			
+//			data = sum_1 / ((float)data_1[3]/4096*3.3-(float)data_1[99]/4096*3.3);
+//			printf("\r\n%f",data);
+//			
 //			data = (sum_1-sum_2)/(sum_2-sum_3);
 //			printf("\r\n%f",100/log(data));
 			
 
-			sum_1 = 0;
-			sum_2 = 0;
-			sum_3 = 0;
-			data = 0;
-			delay_ms(500);
+//			sum_1 = 0;
+//			sum_2 = 0;
+//			sum_3 = 0;
+//			data = 0;
+//			delay_ms(500);
 //			ADC_ConvertedValueLocal[0] =(float) ADC_ConvertedValue[0]/4096*3.3;
 //	
 //			printf("\r\n CH0 value = %f V \r\n",ADC_ConvertedValueLocal[0]);
 //			delay_ms(1000);
-//			data = get_data();
-//			data = data + get_data();
-//			data = data + get_data();
-//			data = data + get_data();
-//			data = data + get_data();
-//			data = data + get_data();
-//			printf("\r\n%f",data/6);
-//			delay_ms(200);
+			data = get_data();
+			data = data + get_data();
+			data = data + get_data();
+			printf("\r\n%f",data/3);
+			delay_ms(200);
 
 	 
 	}
