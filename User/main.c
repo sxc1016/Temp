@@ -57,22 +57,25 @@ int main(void)
 //			}
 //			while(1);
 		
-			for(i=0; i<20; i++)
+			for(i=2; i<220; i++)
 			{
 				sum_1 = sum_1 + (float)data_1[i]/4096*3.3;
 			}
-			for(i=20; i<40; i++)
-			{
-				sum_2 = sum_2 + (float)data_1[i]/4096*3.3;
-			}
-			for(i=40; i<60; i++)
-			{
-				sum_3 = sum_3 + (float)data_1[i]/4096*3.3;
-			}
-//			data = (sum_1-sum_2) / ((float)data_1[99]/4096*3.3 - (float)data_1[59]/4096*3.3);
-			data = (sum_1-sum_2)/(sum_2-sum_3);
-			printf("\r\n%f",100/log(data));
-//			printf("\r\n%f",data);
+//			for(i=20; i<40; i++)
+//			{
+//				sum_2 = sum_2 + (float)data_1[i]/4096*3.3;
+//			}
+//			for(i=40; i<60; i++)
+//			{
+//				sum_3 = sum_3 + (float)data_1[i]/4096*3.3;
+//			}
+			data = sum_1 / ((float)data_1[2]/4096*3.3-(float)data_1[219]/4096*3.3);
+			printf("\r\n%f",data);
+			
+//			data = (sum_1-sum_2)/(sum_2-sum_3);
+//			printf("\r\n%f",100/log(data));
+			
+
 			sum_1 = 0;
 			sum_2 = 0;
 			sum_3 = 0;
