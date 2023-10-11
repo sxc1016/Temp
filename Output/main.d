@@ -34,3 +34,4 @@
 ..\..\output\main.o: ..\..\User\delay\delay.h
 ..\..\output\main.o: ..\..\User\led\bsp_led.h
 ..\..\output\main.o: ..\..\User\test\bsp_test.h
+..\..\output\main.o: D:\ruanjian\MDK\ARM\ARMCC\Bin\..\include\math.h
