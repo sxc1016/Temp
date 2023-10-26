@@ -90,9 +90,9 @@ int main(void)
 			data = data + get_data();
 //			printf("\r\n%f",(393.75-4.26*(data/3)) );//第一次标定
 //			printf("\r\n%f",(378.45611-4.01683*(data/3)) );//第二次标定
-//			printf("\r\n%f",(361.04135-3.8988*(data/3)) );//第三次前半段标定
-//			printf("\r\n%f",(419.39213-4.72538*(data/3)) );//第三次后半段标定
-			printf("\r\n%f",data/3 );
+			printf("\r\n%f",(361.04135-3.8988*(data/3)) );//第三次前半段标定
+			printf("\r\n%f",(419.39213-4.72538*(data/3)) );//第三次后半段标定
+//			printf("\r\n%f",data/3 );
 			delay_ms(500);
 
 	 
